@@ -1,0 +1,263 @@
+/* ================================
+   OIBSIP Temperature Converter
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e1b4b, #312e81);
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+/* Main container */
+
+.container {
+    width: 100%;
+    max-width: 700px;
+}
+
+/* Converter card */
+
+.converter-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+
+    padding: 40px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Header */
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.badge {
+    display: inline-block;
+
+    padding: 8px 14px;
+    margin-bottom: 18px;
+
+    border-radius: 50px;
+
+    background: rgba(129, 140, 248, 0.15);
+    border: 1px solid rgba(129, 140, 248, 0.3);
+
+    color: #c7d2fe;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.header h1 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #cbd5e1;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Form */
+
+.converter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+
+    padding: 15px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+
+    background: rgba(15, 23, 42, 0.75);
+    color: #ffffff;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #818cf8;
+    box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.15);
+}
+
+.input-group input::placeholder {
+    color: #94a3b8;
+}
+
+.input-group select option {
+    background: #1e1b4b;
+    color: #ffffff;
+}
+
+/* Convert button */
+
+#convertBtn {
+    border: none;
+    border-radius: 12px;
+
+    padding: 15px;
+
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+#convertBtn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(99, 102, 241, 0.35);
+}
+
+#convertBtn:active {
+    transform: translateY(0);
+}
+
+/* Error message */
+
+.error-message {
+    min-height: 20px;
+
+    text-align: center;
+
+    color: #fca5a5;
+    font-size: 14px;
+}
+
+/* Results */
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.result-box {
+    text-align: center;
+
+    padding: 22px 12px;
+
+    background: rgba(15, 23, 42, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 15px;
+
+    transition: 0.3s ease;
+}
+
+.result-box:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(129, 140, 248, 0.5);
+}
+
+.result-box span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.result-box strong {
+    font-size: 22px;
+    color: #ffffff;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer p {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+/* ================================
+   Responsive Design
+   ================================ */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .converter-card {
+        padding: 25px 20px;
+        border-radius: 18px;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .results {
+        grid-template-columns: 1fr;
+    }
+
+    .result-box {
+        padding: 18px;
+    }
+}
